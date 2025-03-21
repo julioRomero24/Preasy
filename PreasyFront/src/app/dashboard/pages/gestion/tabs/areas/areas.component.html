@@ -1,0 +1,41 @@
+<div class="container mt-4">
+  <!-- Input de filtro -->
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Filtrar productos..."
+      [(ngModel)]="filtro"
+      (input)="filtrar()"
+    />
+  </div>
+
+  <div class="table-wrapper table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(x of areasFilter; track lst.includes){
+          <tr scope="row">
+            <td><label class="text">{{x.id}}</label></td>
+            <td><label class="text">{{x.nombre}}</label></td>
+            <td>
+              <div class="btn-group">
+                <button type="button" class="btn btn-warning">Editar</button>
+                <button type="button" class="btn btn-danger">Elininar</button>
+              </div>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+

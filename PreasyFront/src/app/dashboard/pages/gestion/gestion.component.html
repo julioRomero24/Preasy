@@ -1,0 +1,39 @@
+<div class="title-wrapper pt-30">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <div class="title">
+        <h2>Gestión de Empleados</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="invoice-wrapper">
+  <div class="row">
+    <div class="invoice-card card-style mb-30">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{'active': selectedTab === 'areas'}" (click)="selectTab('areas')">Áreas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{'active': selectedTab === 'costos'}" (click)="selectTab('costos')">Costos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{'active': selectedTab === 'jerarquia'}" (click)="selectTab('jerarquia')">Jerarquias</a>
+        </li>
+      </ul>
+
+      <div class="tab-content mt-3">
+        @if (selectedTab ==="areas") {
+          <app-areas/>
+        }
+        @if( selectedTab ==="costos"){
+          <app-costos/>
+        }
+        @if( selectedTab === "jerarquia"){
+          <app-jerarquia/>
+        }
+      </div>
+    </div>
+  </div>
+</div>
